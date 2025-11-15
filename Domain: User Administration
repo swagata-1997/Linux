@@ -1,0 +1,12 @@
+User Administration
+Your name is Jane. Create a repository for your project named “Linux”. The folder is created outside the
+home directory of Jane.
+It is a group project and your friend Tom also has to have access to this repository.
+Things to be noted:
+• You create a user Tom with short description and password and a home directory.
+• Let Tom modify his shell and password.
+• Tom shouldn’t be able to access your home folder.
+• Create another folder named ‘notes’ where you keep your study notes and Tom and may be
+other friends can also have same access to it. Guest shouldn’t be able to modify anything.
+• Create another folder named ‘research’ where you keep the list of your researches. Others can
+have a look at list of researches in it but no one should be able to read, write it. 
