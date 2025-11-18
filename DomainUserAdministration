@@ -1,0 +1,35 @@
+User Administration
+Your name is Jane. Create a repository for your project named “Linux”. The folder is created outside the
+home directory of Jane.
+It is a group project and your friend Tom also has to have access to this repository.
+Things to be noted:
+• You create a user Tom with short description and password and a home directory.
+• Let Tom modify his shell and password.
+• Tom shouldn’t be able to access your home folder.
+• Create another folder named ‘notes’ where you keep your study notes and Tom and may be
+other friends can also have same access to it. Guest shouldn’t be able to modify anything.
+• Create another folder named ‘research’ where you keep the list of your researches. Others can
+have a look at list of researches in it but no one should be able to read, write it. 
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+User Creation - Jane
+sudo useradd -m Jane #here I am creating an user named Jane with -m flag which will create the home directory for Jane i.e., /home/Jane
+User Creation - Tom
+sudo useradd -m -c "Tom Hanks" Tom #here I am creating an user named Tom  with -m to create a home directory i.e., /home/Tom and -c comment as Tom Hanks 
+Setup Tom Password so that he changes the password when he next logs in: 
+sudo passwd Tom #this will give the prompt to enter the one time password
+sudo passwd -e Tom #this will give Tom the prompt to update the password once he logs in with the one time password.
+Tom will now change his shell
+chsh is the command to change the shell when we run this command we will get the prompt to update the login shell.
+To verify if the login shell has updated we need to run grep username /etc/passwd 
+How to check what shells are available in the system?
+cat /etc/shells
+Create a group whose members would be Tom and Jane and the group will be created by Jane
+sudo groupadd DevProjectMembers
+Add the members to the group
+sudo usermod -aG Jane
+sudo usermod -aG Tom
+Create a repository under a common directory : /opt
+sudo mkdir -p /opt/DevProject/Linux #here I have used -p because it will make sure if the parent directory is not there it will create one
+Change the Ownership of the directory Linux
