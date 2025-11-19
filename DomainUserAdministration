@@ -33,3 +33,4 @@ sudo usermod -aG Tom
 Create a repository under a common directory : /opt
 sudo mkdir -p /opt/DevProject/Linux #here I have used -p because it will make sure if the parent directory is not there it will create one
 Change the Ownership of the directory Linux
+sudo 
